@@ -1,8 +1,3 @@
+const initialState = {};
 
-const initialState = {
-
-}
-
-export const authReducer = (state = initialState, action) => {
-
-}
+export const authReducer = (state = initialState, action) => {};

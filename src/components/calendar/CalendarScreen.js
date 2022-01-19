@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
 import { messages } from "../../helpers/calendar-messages-en";
-import { uiCloseModal, uiOpenModal } from "../../actions/ui";
+import { uiOpenModal } from "../../actions/ui";
 import { Navbar } from "../ui/Navbar";
 import { CalendarEvent } from "./CalendarEvent";
 import { CalendarModal } from "./CalendarModal";

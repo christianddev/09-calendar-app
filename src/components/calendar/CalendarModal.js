@@ -9,7 +9,7 @@ import { uiCloseModal } from "../../actions/ui";
 import {
   eventClearActiveEvent,
   eventStartAddNew,
-  eventUpdated,
+  eventStartUpdated,
 } from "../../actions/events";
 
 const customStyles = {
@@ -77,7 +77,7 @@ export const CalendarModal = () => {
 
     // TODO: save on DB
     if (activeEvent) {
-      dispatch(eventUpdated(formValues));
+      dispatch(eventStartUpdated(formValues));
     } else {
       dispatch(eventStartAddNew(formValues));
     }

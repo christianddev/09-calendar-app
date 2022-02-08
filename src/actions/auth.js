@@ -9,21 +9,21 @@ const setToken = (token) => {
   localStorage.setItem("token-init-date", new Date().getTime());
 };
 
-const login = (user) => ({
+export const login = (user) => ({
   type: types.authLogin,
   payload: user,
 });
 
-const register = (user) => ({
+export const register = (user) => ({
   type: types.authStartRegister,
   payload: user,
 });
 
-const checkingFinish = () => ({
+export const checkingFinish = () => ({
   type: types.authCheckingFinish,
 });
 
-const logout = () => ({ type: types.authLogout });
+export const logout = () => ({ type: types.authLogout });
 
 export const startLogin = (email, password) => {
   return async (dispatch) => {

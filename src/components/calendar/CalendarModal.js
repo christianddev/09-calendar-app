@@ -23,7 +23,9 @@ const customStyles = {
   },
 };
 
-Modal.setAppElement("#root");
+if (process.env.NODE_ENV !== "test") {
+  Modal.setAppElement("#root");
+}
 
 const now = moment().minutes(0).seconds(0).add(1, "hours");
 
@@ -75,7 +77,6 @@ export const CalendarModal = () => {
       return Swal.fire("Error", "End date must be higher", "error");
     }
 
-    // TODO: save on DB
     if (activeEvent) {
       dispatch(eventStartUpdated(formValues));
     } else {
@@ -93,6 +94,7 @@ export const CalendarModal = () => {
         className="modal"
         overlayClassName="modal-fondo"
         closeTimeoutMS={200}
+        ariaHideApp={!process.env.NODE_ENV === "test"}
       >
         <h1>{activeEvent ? "Edit Event" : "New Event"}</h1>
         <hr />
